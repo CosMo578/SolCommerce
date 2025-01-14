@@ -2,7 +2,6 @@
 import { useAppKit } from '@reown/appkit/react';
 
 export default function ConnectButton() {
-  // 4. Use modal hook
   const { open } = useAppKit();
 
   return (

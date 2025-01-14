@@ -8,26 +8,20 @@ import {
   SolflareWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
 
-// ---------------------------------------------------------
-// 0. Set up Solana Adapter
 const solanaWeb3JsAdapter = new SolanaAdapter({
   wallets: [new PhantomWalletAdapter(), new SolflareWalletAdapter()],
 });
 
-// 1. Get projectId from https://cloud.reown.com
 const projectId = '9a73ce216d780473621e20742c950e5b';
 
-// 3. Create modal
 createAppKit({
   adapters: [solanaWeb3JsAdapter],
   networks: [solana, solanaTestnet, solanaDevnet],
   projectId,
   features: {
-    analytics: true, // Optional - defaults to your Cloud configuration
+    analytics: true,
   },
 });
-
-// ---------------------------------------------------------
 
 const AppKitContext = createContext({});
 export const useAppKitContext = () => {
